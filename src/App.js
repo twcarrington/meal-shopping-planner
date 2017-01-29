@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const fooRef = data.ref().child();
+    const fooRef = data.ref().child('foo');
 
     fooRef.on('value', snap => {
       this.setState( {
