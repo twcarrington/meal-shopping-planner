@@ -14,13 +14,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const foodRef = firebase.database().ref('/food/');
+    const fooRef = firebase.database().ref('/foo/');
 
-    foodRef.on('value', snap => {
-      foodRef.innerText = JSON.stringify(snap.val(), null, 3);
+    fooRef.on('value', snap => {
+      fooRef.innerText = JSON.stringify(snap.val(), null, 3);
       this.setState( {
         foo: snap.val(),
-        inner: foodRef.innerText
+        inner: fooRef.innerText
       })
     });
   }
